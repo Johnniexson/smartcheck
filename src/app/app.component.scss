@@ -221,6 +221,9 @@ section {
   .column:nth-child(n+3):nth-child(-n+6) {
     text-align: center;
   }
+  .column:nth-child(6) button {
+    font: normal normal 600 15px/19px Muli;
+  }
   .column:nth-child(7) {
     max-width: 20px;
     text-align: end;
