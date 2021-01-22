@@ -1,26 +1,26 @@
-<section>
-  <div class="header">
-    <div class="brand">
-      <img src="assets/svg/Smartcheck-Logo.svg" alt="">
-    </div>
-    <div class="navbar">
-      <div class="nav-links">
-        <div class="link" [class.active]="activeTab === 'home'" (click)="activeTab = 'home'">
-          <img src="assets/svg/noun_Home.svg" alt="">
-          <span>Home</span>
-        </div>
-        <div class="link" [class.active]="activeTab === 'server'" (click)="activeTab = 'server'">
-          <img src=" assets/svg/Group.svg" alt="">
-          <span>Server</span>
-        </div>
-        <div class="link" [class.active]="activeTab === 'application'" (click)="activeTab = 'application'">
-          <img src=" assets/svg/noun_application.svg" alt="">
-          <span>Application</span>
-        </div>
-      </div>
-      <button class="button ctx is-primary is-light has-text-primary">Check Health Status</button>
-    </div>
+<div class="header">
+  <div class="brand">
+    <img src="assets/svg/Smartcheck-Logo.svg" alt="">
   </div>
+  <div class="navbar">
+    <div class="nav-links">
+      <div class="link" [class.active]="activeTab === 'home'" (click)="activeTab = 'home'">
+        <img src="assets/svg/noun_Home.svg" alt="">
+        <span>Home</span>
+      </div>
+      <div class="link" [class.active]="activeTab === 'server'" (click)="activeTab = 'server'">
+        <img src=" assets/svg/Group.svg" alt="">
+        <span>Server</span>
+      </div>
+      <div class="link" [class.active]="activeTab === 'application'" (click)="activeTab = 'application'">
+        <img src=" assets/svg/noun_application.svg" alt="">
+        <span>Application</span>
+      </div>
+    </div>
+    <button class="button ctx is-primary is-light has-text-primary">Check Health Status</button>
+  </div>
+</div>
+<section>
   <div class="main-content">
     <ng-container *ngIf="activeTab === 'home'; else otherTab">
       <div class="stats d-flex">
