@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import './_variables.scss';
+
+body {
+  background: #F1F3F5 0% 0% no-repeat padding-box;
+  opacity: 1;
+  min-height: 100vh;
+  min-width: 1200px; //1920px;
+  overflow: auto;
+}

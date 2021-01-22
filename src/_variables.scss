@@ -1,0 +1,50 @@
+//bulma
+$green: #24C977;
+$green-light: #a9fdd0;
+$green-lighter: #bfffdd;
+$blue:#1B1464;
+$blue-light:#49D3FF;
+$blue-lighter: #49D3FF;
+$yellow:#E0B237;
+$yellow-light: #fee9ab;
+$bunting: #0a58a1;
+$bunting-light: #343a40;
+$bunting-lighter: #6c757d;
+$kelp: #4e5340;
+$kelp-light: #8e9185;
+
+$primary: $blue;
+$primary-light: $blue-light;
+$primary-lighter: $blue-lighter;
+$info: #0a58a1;
+$info-light: #e4f2ff;
+$info-lighter: #d4dee7;
+$link: $blue;
+$white: #ffffff;
+$red:  #FF4343F7;
+
+@import '~bulma';
+
+$blue-invert: findColorInvert($blue);
+$blue-light-invert: findColorInvert($blue-light);
+$blue-lighter-invert: findColorInvert($blue-lighter);
+$bunting-invert: findColorInvert($bunting);
+$yellow-invert: findColorInvert($yellow);
+$yellow-light-invert: findColorInvert($yellow-light);
+$green-invert: findColorInvert($green);
+$green-light-invert: findColorInvert($green-light);
+$green-lighter-invert: findColorInvert($green-lighter);
+$kelp-invert: findColorInvert($kelp);
+$link-invert: $blue-invert;
+$link-hover: $bunting-lighter;
+
+$text: $bunting-light;
+$text-strong: $bunting-light;
+
+$text-light: $bunting-lighter;
+$text-invert: findColorInvert($text);
+
+$family-work-sans: "Work Sans", sans-serif;
+
+$family-primary: $family-work-sans;
+$family-secondary: Regular 22px / 25px $family-work-sans;

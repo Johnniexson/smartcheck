@@ -1,0 +1,212 @@
+<section>
+  <div class="header">
+    <div class="brand">
+      <img src="assets/svg/Smartcheck-Logo.svg" alt="">
+    </div>
+    <div class="navbar">
+      <div class="nav-links">
+        <div class="link" [class.active]="activeTab === 'home'" (click)="activeTab = 'home'">
+          <img src="assets/svg/noun_Home.svg" alt="">
+          <span>Home</span>
+        </div>
+        <div class="link" [class.active]="activeTab === 'server'" (click)="activeTab = 'server'">
+          <img src=" assets/svg/Group.svg" alt="">
+          <span>Server</span>
+        </div>
+        <div class="link" [class.active]="activeTab === 'application'" (click)="activeTab = 'application'">
+          <img src=" assets/svg/noun_application.svg" alt="">
+          <span>Application</span>
+        </div>
+      </div>
+      <button class="button ctx is-primary is-light has-text-primary">Check Health Status</button>
+    </div>
+  </div>
+  <div class="main-content">
+    <ng-container *ngIf="activeTab === 'home'; else otherTab">
+      <div class="stats d-flex">
+        <div class="guage">
+          <div class="title">Application Status</div>
+          <div class="counts app_stat d-flex">
+            <div class="indicator">
+              <div class="count">0</div>
+              <div class="indicator-text">All</div>
+            </div>
+            <div class="indicator">
+              <div class="count">0</div>
+              <div class="indicator-text">Active</div>
+            </div>
+            <div class="indicator">
+              <div class="count">0</div>
+              <div class="indicator-text">Critical</div>
+            </div>
+          </div>
+        </div>
+        <div class="guage">
+          <div class="title">Servers</div>
+          <div class="counts server d-flex">
+            <div class="indicator">
+              <div class="count">0</div>
+              <div class="indicator-text">All</div>
+            </div>
+            <div class="indicator">
+              <div class="count">0</div>
+              <div class="indicator-text">Active</div>
+            </div>
+            <div class="indicator">
+              <div class="count">0</div>
+              <div class="indicator-text">Inactive</div>
+            </div>
+          </div>
+        </div>
+        <div class="guage">
+          <div class="title">Health check counts</div>
+          <div class="counts health_check">
+            <div class="indicator">
+              <div class="h_count">60</div>
+              <div class="indicator-text">Counts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="board">
+        <div class="filter d-flex">
+          <div class="field search mb-0">
+            <p class="control has-icons-left">
+              <input class="input" type="text" placeholder="Enter a search keyword">
+              <span class="icon is-small is-left">
+                <i class="fas fa-search has-text-dark"></i>
+              </span>
+            </p>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown-trigger">
+              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>All Applications</span>
+                <span class="icon is-small">
+                  <i class="fas fa-caret-down has-text-dark" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown-trigger">
+              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>All Servers</span>
+                <span class="icon is-small">
+                  <i class="fas fa-caret-down has-text-dark" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown-trigger">
+              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>Health check status</span>
+                <span class="icon is-small">
+                  <i class="fas fa-caret-down has-text-dark" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="data-table">
+          <div class="info">
+            <img src="assets/svg/PDF.svg" alt="">
+            <img src="assets/svg/xls.svg" alt="">
+            <span>Showing 10 of 5000 Entries</span>
+          </div>
+          <div class="row head">
+            <div class="column pl-0">S/N</div>
+            <div class="column">APPLICATION</div>
+            <div class="column">SERVERS MAPPED</div>
+            <div class="column">LAST SCAN DATE</div>
+            <div class="column">STATUS</div>
+            <div class="column">ACTION</div>
+            <div class="column pr-0"></div>
+          </div>
+          <div class="row">
+            <div class="column pl-0">1 <div class="active_pointer"></div>
+            </div>
+            <div class="column">Application name goes here</div>
+            <div class="column">3 Servers</div>
+            <div class="column">11/12/20 3: 57:29 PM</div>
+            <div class="column"><i class="fas fa-check-circle"></i> Healthy</div>
+            <div class="column"><button class="button ctx is-primary is-light has-text-primary">View Result</button>
+            </div>
+            <div class="column pr-0"><i class="fas fa-ellipsis-v"></i></div>
+          </div>
+          <div class="row">
+            <div class="column pl-0">2 <div class="active_pointer"></div>
+            </div>
+            <div class="column">Application name goes here</div>
+            <div class="column">2 Servers</div>
+            <div class="column">11/12/20 3: 57:29 PM</div>
+            <div class="column"><i class="fas fa-check-circle"></i> Healthy</div>
+            <div class="column"><button class="button ctx is-primary is-light has-text-primary">View Result</button>
+            </div>
+            <div class="column pr-0"><i class="fas fa-ellipsis-v"></i></div>
+          </div>
+          <div class="row">
+            <div class="column pl-0">3 <div class="active_pointer"></div>
+            </div>
+            <div class="column">Application name goes here</div>
+            <div class="column">2 Servers</div>
+            <div class="column">11/12/20 3: 57:29 PM</div>
+            <div class="column"><img src="assets/svg/triangle.svg" alt=""> Inactive</div>
+            <div class="column"><button class="button ctx is-primary is-light has-text-primary">View Result</button>
+            </div>
+            <div class="column pr-0"><i class="fas fa-ellipsis-v"></i></div>
+          </div>
+          <div class="row">
+            <div class="column pl-0">4 <div class="active_pointer"></div>
+            </div>
+            <div class="column">Application name goes here</div>
+            <div class="column">3 Servers</div>
+            <div class="column">11/12/20 3: 57:29 PM</div>
+            <div class="column"><i class="fas fa-check-circle"></i> Healthy</div>
+            <div class="column"><button class="button ctx is-primary is-light has-text-primary">View Result</button>
+            </div>
+            <div class="column pr-0"><i class="fas fa-ellipsis-v"></i></div>
+          </div>
+          <div class="row">
+            <div class="column pl-0">5 <div class="critical_pointer"></div>
+            </div>
+            <div class="column">Application name goes here</div>
+            <div class="column">3 Servers</div>
+            <div class="column">11/12/20 3: 57:29 PM</div>
+            <div class="column"><i class="fas fa-check-circle"></i> Healthy</div>
+            <div class="column"><button class="button ctx is-primary is-light has-text-primary">View Result</button>
+            </div>
+            <div class="column pr-0"><i class="fas fa-ellipsis-v"></i></div>
+          </div>
+          <div class="paginator">
+            <button class="button is-inverted">PREVIOUS</button>
+            <div class="active">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>...</div>
+            <div>1539</div>
+            <button class="button is-inverted">NEXT</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #otherTab>
+      <div>{{activeTab}}</div>
+    </ng-template>
+  </div>
+</section>
